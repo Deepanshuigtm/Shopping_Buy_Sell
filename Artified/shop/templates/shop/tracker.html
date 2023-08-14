@@ -1,0 +1,56 @@
+{% extends 'shop/basic.html' %}
+{% block css%}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/tracker.css' %}">
+{% endblock %}
+{% block body %}
+<br>
+<div>
+  {% if track_data|length > 0 %}
+    <div>
+      <h1 class = "h1">#Order Information</h1>
+      {% for prod in data.items_json %}
+              <div class= "table_blocks">
+                <div><img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="W3Schools.com" class = "image_resize"></div>
+              <div class = "order_view_item">
+                <a href = "/products/{{prod.0}}">{{prod.1}}</a>
+                <div class = "quantity_price_total">
+                  <div >
+                    <span>Quantity:{{prod.2}}</span>
+                    <span>Price:{{prod.3}}</span>
+                  </div>
+                  <span>Total:{{prod.4}}</span>
+                </div>
+              </div>
+            </div>
+      {% endfor %}
+    </div>
+      <div>
+        <table class="table table-dark table-hover table-bordered">
+          <thead class="thead">
+            <tr>
+              <th scope="col">update_id</th>
+              <th scope="col">Order_id</th>
+              <th scope="col">Order_description</th>
+              <th scope="col">Date</th>
+          </tr>
+          </thead>
+          <tbody>
+              {% for ord in track_data %}
+            <tr>
+              <th scope="row">#{{ord.update_id}}</th>
+              <td>#{{ord.order_id}}</td>
+              <td>{{ord.update_desc}}</td>
+              <td>{{ord.timestamp}}</td>
+          </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div>
+        <h1>No order Found</h1>
+      </div>
+    {% endif %}
+  </div>  
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'basic.html' %}
+
+{% block css %}
+{% endblock  %}
+<!-- <!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+</head> --> -->
+
+{% block body %}
+
+    <div class="section">
+        <div class="section-heading">
+            <h1>Create a Store Your Customers Love</h1>
+            <p>Shoppers spent more than $26 billion and placed over 185 million orders on Artified stores.</p>
+            <!-- <input type="search" class="form-control inline-flex items-center bg-gray-100 border-0 py-2 px-3 focus:outline-none hover:bg-gray-200 rounded-sm text-base md:mt-0 text-sm font-medium " placeholder="Search" aria-label="Search" aria-describedby="button-addon2" name="search" id="get-started-search"> -->
+            <a class="sc-e3210ff9-0 cnchrg sc-6c370cb9-0 hPNPOv sc-791c6588-2 jLrGPT" data-hide="logged-in" rel="noopener" href="/signup"><span>Get started</span> <svg class="icon-getstarted" width="16" height="16" viewBox="0 0 16 16" fill="#8A8F98"><path d="M5.46967 11.4697C5.17678 11.7626 5.17678 12.2374 5.46967 12.5303C5.76256 12.8232 6.23744 12.8232 6.53033 12.5303L10.5303 8.53033C10.8207 8.23999 10.8236 7.77014 10.5368 7.47624L6.63419 3.47624C6.34492 3.17976 5.87009 3.17391 5.57361 3.46318C5.27713 3.75244 5.27128 4.22728 5.56054 4.52376L8.94583 7.99351L5.46967 11.4697Z"></path></svg></a>
+        </div>
+        
+        <div class="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="overlay"></div>
+                      <img class="d-block w-100" src="../static/shop/igor.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <div class="overlay"></div>
+                      <img class="d-block w-100" src="../static/shop/anete.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <div class="overlay"></div>
+                      <img class="d-block w-100" src="../static/shop/hero.png" alt="Third slide">
+                    </div>
+                  </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+        <div class="content">
+            <div class="h2-section">
+                <h2>Everything You Need for Ecommerce Success</h2>
+            </div>
+            <div class="content-flex">
+                <div class="content-section">
+                    <img alt="create store" src="../static/shop/create.png">
+                    <h3>Create stunning Storefronts</h3>
+                    <p>With responsive themes and a comprehensive site builder, you can create a unique store without code in just a few minutes</p>
+                    <a class="arrow-link h-14" href="/sell-products-online/" title="create your store" data-adata="link_sell-your-products-arrow-forward">CREATE YOUR STORE</a>
+                </div>
+                <div class="content-section">
+                    <img alt="create store" src="../static/shop/expand.png">
+                    <h3>Sell With Ease</h3>
+                    <p>Enjoy powerful ecommerce features—including inventory management, payment collection, and unlimited product options</p>
+                    <a class="arrow-link h-14" href="/sell-products-online/" title="sell your products" data-adata="link_sell-your-products-arrow-forward">SELL YOUR PRODUCTS</a>
+                </div>
+                <div class="content-section">
+                    <img alt="create store" src="../static/shop/sell.png">
+                    <h3>Expand and Scale</h3>
+                    <p>Reach more customers and grow your sales with built-in SEO management, newsletters, a CRM system, and more through our online selling platform.</p>
+                    <a class="arrow-link h-14" href="/sell-products-online/" title="grow your business" data-adata="link_sell-your-products-arrow-forward">GROW YOUR BUSINESS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+
+</html>

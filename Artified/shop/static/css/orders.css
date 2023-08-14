@@ -1,0 +1,357 @@
+body {
+    font-family:'Inter', sans-serif;
+    border-bottom: 8px solid #e7f5ff;
+  }
+
+.order_view_item{
+    display:block;
+    border: 1px solid black;
+    padding: 20px;
+    width: 100%;
+    margin:0px 10px 10px 10px;
+}
+.quantity_price_total{
+    display:flex;
+    justify-content: space-between;
+
+}
+.mr-5, .mx-5{
+    margin-right: 20px !important;
+}
+.images-carousel{
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3); ;
+}
+
+.image_resize{
+    max-width:300px;
+    max-height: 300px;
+}
+
+.table_blocks{
+    display: flex;
+    margin: 10px;
+
+}
+.text-gray-600{
+    border-top: 8px solid #e7f5ff;
+    margin-left: 70px;
+}
+.text-gray-900{
+    color:#343a40!important;
+    font-family: sans-serif!important;
+    font-weight: bold!important;
+}
+#namepr{
+    margin-top: 90px!important;
+    margin-left:0!important;
+    font-size: 30px!important;
+    margin-right: 0;
+    
+}
+/* .container{
+    background-color: rgba(255, 255, 255, 0.934);
+} */
+.items{
+    background-color: #e7f5ff;
+    box-shadow: 0 10px 10px 10px rgba(0, 0,0 ,0.1);
+    position: relative;
+}
+.cost{
+    font-size:17px;
+    margin-left: 10px;
+}
+.name{
+    font-size: 17px;
+    text-align: center;
+}
+.mx-10{
+    margin-left: 0;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 50px;
+}
+.py-14{
+    padding-top: 0;
+}
+.hover\:text-yellow-900:hover{
+    color: aqua;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.mr-5, .mx-5{
+    margin-right:2rem;
+}
+.btn--left,.btn--right{
+    background-color: white;
+    border:none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn--left{
+    left:14%;
+    top:50%;
+    transform: translate(10px,-90px);
+}
+.btn--right{
+    right:14%;
+    top:50%;
+    transform: translate(-10px,-89px);
+}
+.btn-icon {
+    height:24px;
+    width: 24px;
+    stroke: #087f5b;
+}
+.dots{
+    position: absolute;
+    left:50%;
+    bottom:48%;
+    transform: translate(-50%,32px);
+  
+    display: flex;
+    gap: 10px;
+  }
+  .dot{
+    height:12px;
+    width: 12px;
+    background-color: #fff;
+    border: 2px solid rgb(6 182 212);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  }
+  .dot--fill{
+    background-color: rgb(6 182 212);
+  }
+#button-addon2:hover,#popcart:hover{
+    background-color: aqua;
+    text-decoration: none;
+}
+.ml-3:hover{
+    color: aqua;
+    text-decoration: none;
+}
+.icon{
+    display: flex;
+    gap:10px
+}
+.icons{
+    color: #a9e34b;
+}
+.about-section{
+    display: flex;
+}
+.about-filter{
+    position: absolute;
+    left:50%;
+    top:55%;
+    transform: translate(-10%,32px);
+}
+.optionto-filter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:end;
+    justify-content: end;
+    font-weight: bold;
+    justify-self: end;
+}
+.filter-button{
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+    margin-left: 540px;
+    background-color: #1971c2;
+    width: 80px;
+    padding: 10px;
+    border-radius: 30%;
+
+}
+#filterOptions {
+    /* display: none; */
+    margin-top: 10px;
+    font-size: 16px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.category-filter{
+    display: flex;
+    gap: 20px;
+}
+#filterBtn {
+    /* margin-bottom: 10px; */
+    font-size: 15px;
+    color: #fff;
+    margin-left: 440px;
+    background-color: #1971c2;
+    width: 100px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+#applyFilterBtn{
+    background-color: #1971c2;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    padding: 7px;
+    font-size: 15px;
+}
+  
+#filterBtn:hover {
+    background-color: #135293;
+  }
+  
+#filterBtn:focus {
+    outline: none;
+  }
+#itemsContainer {
+    margin-top: 20px;
+    position: relative;
+}
+  
+.item {
+    margin-bottom: 10px;
+}
+  
+/* .about-filter{
+    display: grid;
+    grid-template-columns: 1fr 20px;
+} */
+/* 
+css of contact.html file */
+.review-cart{
+    display: grid;
+    grid-template-columns: auto 30%;
+    
+}
+/* .item-block{
+    width: 800px;
+    margin: 100px auto;
+    background-color:#e7f5ff;
+    padding: 32px 48px 32px 86px;
+    border-radius: 8px;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    gap: 86px;
+} */
+.item-block img{
+    height:100px;
+    border-radius: 8px;
+    transform: scale(1.5);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    margin-right: 30px;
+    margin-top: 20px;
+}
+#box{
+    justify-content: start;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    padding: 10px 50px;
+    border-radius: 8px;
+    margin-left: 150px;
+}
+.border-black{
+    border-color: #fff;
+}
+.review1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#items{
+    display: flex;
+    flex-direction: column;
+    gap:40px
+}
+.discription-items{
+    display: flex !important;
+    flex-direction: column!important;
+    margin-left: 70px;
+}
+.discription{
+    color: rgb(162, 162, 162);
+    font-size: 15px;
+}
+.discription li{
+    margin-top: 10px;
+}
+.discription li:first-child{
+    margin-top: 0px;
+    font-size: 12px;
+}
+.p-3{
+    justify-content:start;
+    position: relative;
+}
+.bg-blue-600 {
+    position: absolute;
+    top: 20px;
+    left:90%;
+}
+.icon-cost{
+    display: flex;
+    gap:2px;
+    font-weight: 500;
+    color: #424242;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 17px!important;
+}
+/* .itemComponents-base-rupeeBoldIcon{
+} */
+.itemComponents-base-rupeeIcon{
+    margin-left: 10px;
+
+}
+.price-cal{
+    display: flex;
+    align-items: center;
+    
+}
+.discount-price{
+    display:flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #424242;
+    text-decoration: line-through;
+}
+
+/* css of tracket.html */
+.track-section{
+    width:1100px;
+    height: auto;
+    color: #fff;
+    background-color: #000;
+}
+.track{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    padding: 40px;
+}
+.black{
+    background-color: #000;
+}
+.header-section-with{
+    color:#747779!important;
+    font-family: sans-serif!important;
+    font-weight: bold!important;
+    background-color: #000!important;
+}

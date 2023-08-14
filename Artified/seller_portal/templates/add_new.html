@@ -1,0 +1,52 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+<section class="text-gray-600 body-font">
+  
+  <div class="container px-5 py-14 mx-auto">
+    <div class="add-product-section">
+        <form action="/seller/add_new/" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="colorto" for="pname">Name</label>
+                <input type="text" class="form-control" name="pname" placeholder = "Name of the art">
+                <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label class="colorto" for="pcat">Category</label>
+                <input type="text" class="form-control" name="pcat" placeholder = "Category of the art">
+                <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label class="colorto" for="psubcat">SubCategory</label>
+                <input type="text" class="form-control" name="psubcat" placeholder = "Subcategory of the art">
+                <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label class="colorto" for="pprice">Price</label>
+                <input type="number" class="form-control" name="pprice" placeholder = "Price of the art">
+                <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label class="colorto" for="pdesc">Description</label>
+                <input type="text" class="form-control" name="pdesc" placeholder = "Description of the art">
+                <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <label class="colorto" for="{{i.product_id}}_image" onclick="previewImages('{{i.product_id}}_image', '{{i.product_id}}_preview')">Image</label>
+                <div class="preview-section" style="display:flex;justify-content: space-around; ">
+                  <input type="file" id="{{i.product_id}}_image" accept="image/*" multiple name="pimage">
+                  <button type="button" style="background-color: #868e96; padding: 4px 10px; border-radius: 8px;" onclick="previewImages('{{i.product_id}}_image', '{{i.product_id}}_preview')">Preview</button>
+                </div>
+                <div id="{{i.product_id}}_preview" class="previewContainer"></div>
+                <div id="{{i.product_id}}_imageNames" class="imageNamesContainer"></div>
+              </div>
+              
+            <button class="submit-btn" type="submit" >Submit</button>
+          </form>
+    </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

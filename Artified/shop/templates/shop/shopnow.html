@@ -1,0 +1,250 @@
+{% extends 'shop/basic.html' %}
+{% block css %}
+
+
+{% endblock %}
+{% block body %}
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-14 mx-auto">
+    <div class="about-filter" style="left:15%; top:33%;">
+      <div class="filetr-section" style="display:flex; align-items: flex-start; justify-content: flex-start;">
+        <div class="apply-filter-btn-section">
+          <button id="filterBtn">Filter</button>
+        </div>
+        <div id="filterOptions" style="display:none ;">
+          <form id="filterForm" action="{% url 'apply_filter' %}" method="get">
+            <div class="category-filter" style="padding-bottom:40px;">
+              <label for="priceFilter">Price:</label>
+              <select id="priceFilter" name="price">
+                <option value="all">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+      
+              <label for="categoryFilter">Category:</label>
+              <select id="categoryFilter" name="category">
+                <option value="all">All</option>
+                <option value="category1">Physical</option>
+                <option value="category2">Digital</option>
+                <option value="category3">NFT</option>
+              </select>
+      
+              <button type="submit">Apply Filter</button>
+            </div>
+          </form>
+        </div> 
+      </div>
+    </div>
+
+
+   </div>
+    {% for product, range , nSlides in allProds %}
+    <h2 class="text-gray-900 title-font text-2xl font-semibold ml-11 my-3.5" style="background-color: rgb(239, 239, 239); padding:10px 0; padding-left:30px; margin-right: 100px;" id="namepr{{i.product_id}}">{{product.0.category}} Recommended Items</h2>
+    <div class="flex flex-wrap mx-10">
+      {% for i in product %}
+      <div class=" md:w-1/2 p-4 w-full border-2 mx-1 my-1 items" style="width:21rem;">
+          <div id="carouselExampleIndicators" class="carousel slide background-image" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              {% for t in i.img.all|slice:"1:" %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              {% endfor %}
+            </ol>
+            
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="overlay"></div>
+                <img class="d-block w-100" style="width:100px; height:200px" src="{{i.img.all.first.image.url}}" alt="First slide" id = "imgpr{{i.product_id}}">
+              </div>
+              {% for t in i.img.all|slice:"1:" %}
+                <div class="carousel-item">
+                  <div class="overlay"></div>
+                  <img class="d-block w-100" style="width:100px; height:200px"src="{{t.image.url}}" alt="Second slide">
+                </div>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+          <!-- <img alt="ecommerce" class="object-contain object-center w-full h-full block imgae1 images-carousel" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"  > -->
+        
+        <div class="mt-4">
+          {% comment %} <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> {% endcomment %}
+          <h2 class="text-gray-900 title-font text-lg font-medium name" id="namepr{{i.product_id}}">{{i.product_name}}</h2>
+          <p class="text-gray-900 text-base my-3 font-semibold">₹<span id="pricepr{{i.product_id}}">{{i.price}}</span></p>
+      <div class="flex flex-row justify-between">
+        <span id="divpr{{i.product_id}}" class="divpr">
+              <button type="button" id="pr{{i.product_id}}" class="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6 md:flex md:mx-auto lg:ml-1 md:ml-1 basis-1/2 md:mr-12 md:flex md:items-center md:w-auto md:space-x-6 inline-flex items-center bg-sky-600 border-0 py-2 px-4 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm font-medium cart text-white transition-colors duration-300 ease-in-out" data-json="pr{{i.product_id}}">Add to Cart</button>
+            </span>
+        
+        <a href="/products/{{i.product_id}}"> <button type="button" id="qv{{i.product_id}}"
+          class="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6 md:flex md:mx-auto basis-1/2 md:ml-14 md:flex md:items-center md:w-auto md:space-x-6 inline-flex items-center bg-sky-600 border-0 py-2 px-4 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-white text-sm font-medium cart transition-colors duration-300 ease-in-out">View
+      </button></a>
+    </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script>
+  const products = Array.from(document.querySelectorAll('.name'));
+  console.log(products)
+  $(document).ready(function() {
+    $('#filterBtn').on('click', function() {
+      console.log('we click filter')
+      // Get the product ID from the button's class
+      if (filterOptions.style.display === "block") {
+        filterOptions.style.display = "none"; // Hide the filter options
+      } else {
+        filterOptions.style.display = "block"; // Show the filter options
+      }
+    })
+    $('#applyFilterBtn').on('click',function(){
+      console.log('we cliack apply')
+      if (filterOptions.style.display === "block") {
+        filterOptions.style.display = "none"; // Hide the filter options
+      } else {
+        filterOptions.style.display = "block"; // Show the filter options
+      }
+      
+
+    })
+  });
+  applyFilterBtn.addEventListener("click", function () {
+    // Get the selected price filter value
+    const priceFilterValue = document.getElementById("priceFilter").value;
+    // Get the selected category filter value
+    const categoryFilterValue = document.getElementById("categoryFilter").value;
+    console.log(priceFilterValue)
+    console.log(categoryFilterValue)
+    // Sort the product elements based on their prices in lower to higher order
+    products.sort((a, b) => {
+      const priceA = parseFloat(document.getElementById(`pricepr${a.id.substr(6)}`).textContent);
+      const priceB = parseFloat(document.getElementById(`pricepr${b.id.substr(6)}`).textContent);
+      return priceA - priceB;
+    });
+
+    // Reorder the products based on the sorted order
+    const parentElement = products[0].parentNode;
+    products.forEach(product => {
+      parentElement.appendChild(product);
+    });
+
+  // Find out the cart from localStorage
+  if (localStorage.getItem('cart') == null) {
+    var cart = {};  
+  }
+
+  else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+  }
+
+  // To hide Add to cart button on NO Login
+  // var data=document.getElementsByClassName('divpr');
+  // data.style.visibility='hidden';
+    // document.getElementById('div' + {{i.id}}).style.visibility='hidden';
+
+
+  // If the Add to Cart button is clicked, add the item
+
+
+  $('.divpr').on('click', 'button.cart', function () {
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+      qty = cart[idstr][0] + 1;
+    } else {
+      qty = 1;
+      name = document.getElementById('name' + idstr).innerHTML
+      price = document.getElementById('price' + idstr).innerHTML
+      var simg_src = document.getElementById("img"+idstr);
+      cart[idstr] = [qty, name, parseInt(price), simg_src.src];
+    }
+    updateCart(cart);
+  });
+
+
+  // Add popover to Cart
+  $('#popcart').popover();
+  updatePopover(cart);
+  function updatePopover(cart) {
+    var popStr = "";
+    popStr = popStr + "<h5 class='text-center my-2'>Cart</h5><div class='mx-2 my-2' style='display:flex;flex-direction: column; gap:10px;'</div>";
+    var i = 1;
+    for (var item in cart) {
+      popStr = popStr + "<div class='cart-item-list' style='display:flex; gap:10px; border-bottom:1px solid #000;'><div class='number-item'><b>" + i + "</b></div><div class='image-item' style='margin-right:10px; padding-bottom:10px'><img alt=item-image src=https://images.unsplash.com/photo-1560132103-ff44e9dc1f1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80 style= 'height: 100px; width: 120px';></div><div class='name-item-cart' style='font-weight:bold; font-size:18px;'>";
+      popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "<div class=price-item style='font-size:15px; font-weight:normal;'>Price</div><div class=item-quantity style='font-size:15px; font-weight:normal;'> Quantity: " + cart[item][0] + '</div></div></div>';
+      i = i + 1;
+    }
+    popStr = popStr + "</div> <div class='cart-btn-section' style='display:flex;'><a href='/checkout/'><button class='inline-flex items-center bg-gray-100 border-0  py-1.5 px-3.5 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm ml-4 font-medium bg-sky-600 text-white mr-4 transition-colors duration-300 ease-in-out' id='checkout'>Checkout</button></a> <button class='inline-flex items-center bg-gray-100 border-0  py-1.5 px-3.5 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm ml-4 font-medium bg-sky-600 text-white mr-4 transition-colors duration-300 ease-in-out' id='clearCart' onclick='clearCart()' >ClearCart</button> </div>"
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('show');
+  }
+
+  // Function to Clear Cart
+  function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart) {
+      document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6 md:flex md:mx-auto lg:ml-1 md:ml-1 lg:mr-12 md:mr-12 md:flex md:items-center md:w-auto md:space-x-6 inline-flex items-center bg-sky-600 border-0 py-2 px-4 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm font-medium cart text-white">Add to Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart)
+  }
+
+  // Function to Update Cart
+  function updateCart(cart) {
+    var sum = 0
+    for (var item in cart) {
+      if (cart[item][0] == 0){
+        delete cart[item];
+      }
+      else{
+        sum = sum + cart[item][0];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='inline-flex items-center bg-gray-100 border-0  py-1.5 px-3.5 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm mr-1 font-medium bg-sky-600 text-white minus transition-colors duration-300 ease-in-out'>-</button> <span id='val" + item + "' class='text-sm font-medium'>" + cart[item][0] + "</span> <button id='plus" + item + "' class='inline-flex items-center bg-gray-100 border-0 py-1.5 px-3.5 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm font-medium bg-sky-600 ml-1 text-white  plus transition-colors duration-300 ease-in-out'> + </button>";
+      }
+
+
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    updatePopover(cart);
+  }
+
+  $('.divpr').on("click", "button.minus", function () {
+
+    a = this.id.slice(7,);
+    cart['pr' + a][0] = cart['pr' + a][0] - 1
+    cart['pr' + a][0] = Math.max(0, cart['pr' + a][0])
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    var valprText = document.getElementById("valpr"+a).textContent;
+    if (valprText == 0) {
+      document.getElementById('divpr' + a).innerHTML = '<button id="pr' + a + '" class="hidden lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6 md:flex md:mx-auto lg:ml-1 md:ml-1 lg:mr-12 md:mr-12 md:flex md:items-center md:w-auto md:space-x-6 inline-flex items-center bg-sky-600 border-0 py-2 px-4 focus:outline-none hover:bg-cyan-500 rounded text-base md:mt-0 text-sm font-medium cart text-white">Add to Cart</button>'
+      }
+    updateCart(cart)
+    
+  });
+  $('.divpr').on("click", "button.plus", function () {
+    a = this.id.slice(6,);
+    cart['pr' + a][0] = cart['pr' + a][0] + 1;
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    updateCart(cart)
+  });
+});
+
+</script>
+{% endblock %}

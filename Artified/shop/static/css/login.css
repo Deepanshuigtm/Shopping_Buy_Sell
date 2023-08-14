@@ -1,0 +1,46 @@
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.btn-block {
+    background-color: aqua;
+}
+
+.vh-100 {
+    background-color:aqua !important;
+}
+
+#alertbox {
+    background-color: aqua;
+}
+.login-button{
+    background-color: #0069d9!important ;
+}
+.login-button:hover{
+    background-color: #054180!important;
+}
+
+.col-md-7 {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    background-color: aliceblue;
+    padding: 20px 10px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+
+
+}
+.text-error-600{
+    margin-top: 0px!important;
+    background-color: #eee;
+}
+.forgot-section{
+    display: none;
+    position: absolute;
+}
+#main-form{
+    position: relative;
+}

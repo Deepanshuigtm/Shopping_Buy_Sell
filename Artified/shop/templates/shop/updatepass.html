@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>landing page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!-- <link rel="stylesheet" href="../../static/css/shopnow.css"> -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      
+      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    </head>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide background-image" data-ride="carousel" style="filter: blur(5px); position: relative;">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="../../static/img/hero.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="../../static/img/customers.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="../../static/img/chair-2.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="update_pass" style="display:flex; flex-direction:column; gap:35px; position:absolute; top:20%; left:30%;padding:40px 20px; background-color: rgb(63, 63, 63); color: #fff; width:35%; height: auto;border-radius: 6px;">
+        {% for message in messages %}
+<div class="" id="alertbox">
+		<div class="flex justify-between items-center bg-{{ message.tags }}-200 relative text-{{ message.tags }}-600 py-3 px-3" role="alert">
+			
+			<span class="font-semibold text-{{message.tags}}-700">{{message}}</span>
+
+			<span class="absolute top-0 bottom-0 right-0 px-4 py-3 closealertbutton">
+				<svg class="fill-current h-6 w-6 text-white" role="button" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20">
+					<title>Close</title>
+					<path
+						d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+				</svg>
+			</span>
+		</div>
+	</div>
+{% endfor %}
+        <div class="head-sec" style="display:flex; flex-direction: column; align-items: center; justify-content: center; gap:20px;">
+            <div>
+                <h1 style="font-size:25px; font-weight:bold;">Update Your Password</h1>
+            </div>
+            <div>
+                <p>Enter your new password and confirm password </p>
+            </div>
+            <div>
+                <p>Email: {{ email }}</p>
+                <p>Username: {{ username }}</p>
+            </div>
+        </div>
+        <div class="main-sec">
+            <form action = "/updatepass/{{ username }}/{{ email }}/" method = "POST" id="forgot-section" style="display:flex; flex-direction:column; gap:30px;">
+                <!-- Password input -->
+                {% csrf_token %} 
+                <div class="form-input" style="display:flex; flex-direction:column;">
+                    <label class="form-label" for="newpass">New Password</label>
+                    <input style="height:40px; background-color: rgb(40, 40, 40); border-radius: 6px;" type="password" id="newpass" name = "newpassword" class="newpass"/>
+                </div>
+                <div class="form-input" style="display:flex; flex-direction:column;">
+                    <label class="form-label" for="conpass">Confirm Password</label>
+                    <input style="height:40px; background-color: rgb(40, 40, 40); border-radius: 6px;" type="password" id="conpass" name = "confirmpassword" class="conpass"/>
+                </div>
+                <!-- Submit button -->
+                <button style ="background-color: #5c7cfa; width:25%; margin-left:170px; padding:7px 30px; border-radius:6px" type="recovery" class="btn-done">Done</button>
+                <button class="btn-cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,262 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% block css %}
+{% endblock  %}
+
+<section class="text-gray-600 body-font main-section">
+    <div class="settings-section" style="column-gap:0">
+        <div class="settings-menu">
+            <div class="dashboard-set set" style="border-radius: 7px;">                  
+                <button class="btn-dashboard tn">
+                  <div class="for-flex">
+                    Dashboard
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 seticon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                      </svg>                      
+                </div>
+                </div>
+                </button>
+            </div>
+            <div class="artwork-set set"style="border-radius: 7px;">
+                <button class="btn-artworks tn">
+                  <div class"for-flex">
+                    Artworks
+                <div>
+                    <svg class="seticon" style="stroke: rgb(231, 255, 255); margin-left: 20px;" height="24" viewBox="0 0 24 24" width="24" focusable="false""><path d="M19 3.87v9.77C19 17.7 15.86 21 12 21s-7-3.3-7-7.37v-.13c0-1.06.22-2.13.62-3.09.5-1.19 1.29-2.21 2.27-2.97.85-.66 1.83-1.14 2.87-1.65.39-.19.77-.38 1.15-.58.36-.19.72-.38 1.08-.56v3.22l1.55-1.04L19 3.87M20 2l-6 4V3c-.85.44-1.7.88-2.55 1.33-1.41.74-2.9 1.34-4.17 2.32-1.13.87-2.02 2.05-2.58 3.37-.46 1.09-.7 2.29-.7 3.48v.14C4 18.26 7.58 22 12 22s8-3.74 8-8.36V2zM9.45 12.89 14 10v5.7c0 1.82-1.34 3.3-3 3.3s-3-1.47-3-3.3c0-1.19.58-2.23 1.45-2.81z"></path></svg>
+                </div>
+                </div>
+                </button>
+            </div>
+            <div class="orders-set set"style="border-radius: 7px;">
+                <button class="btn-orders tn">
+                  <div class="for-flex">
+                    Orders
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 seticon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                      </svg>
+                      
+                </div>
+                </div>
+                </button>
+
+            </div>
+            <div class="info-set set"style="border-radius: 7px;">
+                <button class="btn-inf tn">
+                  <div class="for-flex">
+                    Info
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 seticon for-th">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+                      </svg>                      
+                </div>
+                </div>
+                </button>
+            </div>
+        </div>
+        <div class="My-Account" style="width: 90%; height:auto; margin-left: 12%;">
+            <div class="profile-overview" style="display:block;position: relative;">
+                <div class="name-section">
+                    <div class="profile-img" style="padding:20px 20px;border-radius: 7px;" background-color:rgb(19, 19, 19) ; border-radius: 10px;">
+                        <img style="border-radius: 50%; width:20%; height:auto;" alt="profile-image" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60">
+                        <!-- <img alt="profile-image" src="{{seller_profile_photo.image.url}}"> -->
+                    </div>
+                    <div style="position:absolute; top:14%; left:25%; font-size:40px; font-weight: bold; color: #fff;">{{seller_name}}</div>
+                    <div style="position:absolute; top:25%; left:25%;"><svg style="color:#12b886" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false" class="chakra-icon css-z7zgf0" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M3.783 2.826L12 1l8.217 1.826a1 1 0 0 1 .783.976v9.987a6 6 0 0 1-2.672 4.992L12 23l-6.328-4.219A6 6 0 0 1 3 13.79V3.802a1 1 0 0 1 .783-.976zM5 4.604v9.185a4 4 0 0 0 1.781 3.328L12 20.597l5.219-3.48A4 4 0 0 0 19 13.79V4.604L12 3.05 5 4.604z"></path></g></svg></div>
+                    <!-- "allProds": allarts, "seller_name": seller_name, "seller_discription": seller_discription, "seller_sid": seller_sid,
+                                             "seller_product": seller_product, "seller_accountNo": seller_accountNo, "seller_ifccode": seller_ifccode, "seller_account_holder_name": seller_account_holder_name,
+                                             "seller_profile_photo": seller_profile_photo, "seller_address": seller_address, "seller_pincode": seller_pincode, "seller_city": seller_city}) -->
+                    <div style="font-size:18px; display:flex; gap:40px;color:rgb(194, 194, 194); margin-top: 30px; background-color: rgb(26, 26, 26); padding-left: 10px; border-radius: 7px;">
+                      <div class="name-subsection" style="display:flex;flex-direction:column; gap:10px">
+                        <div class="displayname-section">
+                            <div ><p>Name</p></div>
+                        </div>
+                        <div class="discription-section">
+                            <div><p>Discription</p></div>
+                        
+                        </div>
+                        <div class="sid-section">
+                            <div><p>SID</p></div>
+                        
+                        </div>
+                        <div class="product-section">
+                            <div><p>Seller Product</p></div>
+                            
+                        </div>
+                        <div class="accountnumber-section">
+                            <div>Account Number</div>
+                      
+                        </div>
+                        <div class="ifccode-section">
+                          <div ><p>IFC Code</p></div>
+                        </div>
+                        <div class="accountholdername-section">
+                          <div ><p>Account Holder Name</p></div>
+                        </div>
+                        <div class="sellerAddress-section">
+                          <div ><p>Address</p></div>
+                        </div>
+                        <div class="sellerpincode-section">
+                          <div ><p>Pin Code</p></div>
+                        </div>
+                        <div class="sellercity-section">
+                          <div ><p>City</p></div>
+                        </div>        
+                      </div>
+                      <div class="detail-sec"style="display:flex;flex-direction:column; gap:10px">
+                        <div><p>{{seller_name}}</p></div>
+                        <div><p>{{seller_discription}}</p></div>
+                        <div><p>{{seller_sid}}sid</p></div>
+                        <div><p>{{seller_product}}product</p></div>
+                        <div><p>{{seller_accountNo}}account</p></div>
+                        <div><p>{{seller_ifccode}}ifc</p></div>
+                        <div><p>{{seller_account_holder_name}}acc</p></div>
+                        <div><p>{{seller_address}}</p></div>
+                        <div><p>{{seller_pincode}}</p></div>
+                        <div><p>{{seller_city}}</p></div>
+                      </div>
+                    </div>
+                    <div class="edit-button" style="position:absolute; top:-3%; right:5%">
+                        <a class="sc-e3210ff9-0 cnchrg sc-6c370cb9-0 hPNPOv sc-791c6588-2 jLrGPT" data-hide="edit-" rel="noopener" href="/edit-profile"><span>Edit Profile</span> <svg class="icon-getstarted" width="16" height="16" viewBox="0 0 16 16" fill="#8A8F98"><path d="M5.46967 11.4697C5.17678 11.7626 5.17678 12.2374 5.46967 12.5303C5.76256 12.8232 6.23744 12.8232 6.53033 12.5303L10.5303 8.53033C10.8207 8.23999 10.8236 7.77014 10.5368 7.47624L6.63419 3.47624C6.34492 3.17976 5.87009 3.17391 5.57361 3.46318C5.27713 3.75244 5.27128 4.22728 5.56054 4.52376L8.94583 7.99351L5.46967 11.4697Z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-art" style="display:none;">
+              {% if allProds %}
+                <div class="all-item-section" style="display:grid;grid-template-columns: 1fr; gap: 40px;">
+                  {% for i in allProds %}
+                  <div style="display: grid;grid-template-columns: auto 1fr;">
+                    <div style="border-radius: 17px; width:400px; height:auto; background-color:#000;" id="carouselExampleIndicators" class="carousel slide background-image" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        {% for t in i.img.all|slice:"1:" %}
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        {% endfor %}
+                      </ol>
+                      
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="overlay"></div>
+                          <img class="d-block" style=" border-radius: 17px; background-color:#000;" src="{{i.img.all.first.image.url}}" alt="First slide" id = "imgpr{{i.product_id}}">
+                        </div>
+                        {% for t in i.img.all|slice:"1:" %}
+                          <div class="carousel-item">
+                            <div class="overlay"></div>
+                            <img class="d-block" style=" border-radius: 17px;"src="{{t.image.url}}" alt="Second slide">
+                          </div>
+                        {% endfor %}
+                      </div>
+                      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                  </div>
+            
+                  <div style=" margin-right: 10px; margin-left: 30px; padding-top: 20px; padding-left:20px; padding-right:31%; border-radius:10px; background-color: rgb(35, 35, 35);" class ="">
+                      <div style="display:flex; gap:50px;">
+                          <div style="display:flex; color:rgb(132, 132, 132); flex-direction:column; gap:20px;">
+                              <div><p>NAME</p></div>
+                              <div><p>PRICE</p></div>
+                              <div><p>CATEGORY</p></div>
+                              <div><p>SUBCATEGORY</p></div>
+                              <div><p>DISCRIPTION</p></div>
+                          </div>
+                        <div style="padding-left:20px; display: flex; flex-direction:column; gap:20px; color: rgb(201, 201, 201);">
+                          <div class="name-product for-blur" style="margin-left:0px;">
+                            <p>{{i.product_name}}</p>
+                          </div>
+                          <div class="price-product">             
+                              <p>₹{{i.price}}</p>
+                          </div>
+                          <div class="Category-of-product">             
+                              <p>{{i.category}}</p>
+                          </div>
+                          <div class="Category-of-product">             
+                            <p>{{i.SubCategory}}</p>
+                        </div>
+                          <div class="Description-of-product">             
+                              <p>{{i.Description}}</p>
+                            </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div style="position:absolute; right:1%;">
+                      <button class="edit-button product-id-{{i.product_id}}">
+                          <div class="edit-sec" style="display:flex; gap:10px;">
+                            <span>Edit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon-edit">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                          </div>            
+                        </button>
+                  </div>
+                <div class="edit-section-item product-id-{{i.product_id}}">
+                  <div class="form-group">
+                    <div class="section-for-name" style="display:flex; justify-content:space-between">
+                      <label class="colorto" for="{{i.product_id}}_name">Name</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="width:30px; height:auto; margin-bottom:10px;" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 cancel-icon colorto">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    </div>
+                    <input class="form-control" type = "text"  name = "{{i.product_id}}_name" value = "{{i.product_name}}" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label class="colorto" for = "{{i.product_id}}_price">Price</label>
+                    <input class="form-control" type ="Number" value = {{i.price}} disabled name = "{{i.product_id}}_price">
+                  </div>
+                  <div class="form-group">
+                    <label class="colorto" for="{{i.product_id}}_desc">Description</label>
+                    <input class="form-control" type ="text" value = "{{i.desc}}" disabled name = "{{i.product_id}}_desc">
+                  </div>
+                  <div class="form-group">
+                    <label class="colorto" for="{{i.product_id}}_category">Category</label>
+                    <input class="form-control" type = "text" value = "{{i.category}}" disabled name = "{{i.product_id}}_category">
+                  </div>
+                  <div class="form-group">
+                    <label class="colorto" for="{{i.product_id}}_subcat">SubCategory</label>
+                    <input class="form-control" type = "text" value = "{{i.subcategory}}" disabled name = "{{i.product_id}}_subcat">
+                  </div>
+                  <div class="form-group">
+                    <label class="colorto" for="{{i.product_id}}_image">Image</label>
+                    <div class="preview-section" style="display:flex;justify-content: space-around; ">
+                      <input type="file" id="{{i.product_id}}_image" accept="image/*" multiple>
+                      <button type="button" style="background-color: #868e96; padding: 4px 10px; border-radius: 8px;" onclick="previewImages('{{i.product_id}}_image', '{{i.product_id}}_preview')">Preview</button>
+                    </div>
+                    <div id="{{i.product_id}}_preview" class="previewContainer"></div>
+                    <div id="{{i.product_id}}_imageNames" class="imageNamesContainer"></div>
+                  </div>
+                  
+                  <div class = "edit-section">
+                    <button class = "edit_button_seller btn btn-primary btn-lg btn-block " data-pid = "{{i.product_id}}">Edit</button>
+                  </div>
+                  <div class = "inactive">
+                    <p>Are you sure?</p>
+                    <button class = "cancel_button_seller btn btn-danger " data-pid = "{{i.product_id}}">cancel</button>
+                    <button class = "save_button_seller btn btn-success" data-pid = "{{i.product_id}}">save</button>
+                  </div>
+                  <br>
+                </div>
+                </div>
+                  
+                  {% endfor %}
+                </div>
+              {% else %}
+              <div class ="">
+                <h1 class = "h1">no arts have been added </h1>
+                <a href = "/seller/add_new/" class = "link-primary h1">Add Now</a>
+          
+              </div>
+          
+              {% endif %}
+              </div>
+            </div>
+      </div>
+        </div>
+        
+</section>
+{% endblock %}

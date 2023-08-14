@@ -1,0 +1,18 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.btn-block{
+
+    background-color:aqua;
+}
+.text-gray-900{
+    color:#747779!important;
+    font-family: sans-serif!important;
+    font-weight: bold!important;
+    background-color: #000!important;
+}
